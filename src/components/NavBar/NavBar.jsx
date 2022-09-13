@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './styles.module.css';
 
 import { Brightness4, Brightness7, AccountCircle, Menu } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
-import { Search, Sidebar } from '../'
+import { Search, Sidebar, SidebarModalMobile } from '../'
+import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
 
 const NavBar = () => {
+  const { sidebarModalMobile, handleSidebarModalMobile } = useContext(ToggleSidebarContext);
+
   return (
     <div className={styles.header}>
       <div className={styles.wrapper}>
@@ -22,8 +25,9 @@ const NavBar = () => {
         </div>
       </div>
       <div className={styles["mobile-wrapper"]}>
+        <SidebarModalMobile />
         <div className={styles["mobile-top-wrapper"]}>
-          <Menu className={styles["mobile-menu"]}/>
+          <Menu className={styles["mobile-menu"]} onClick={handleSidebarModalMobile}/>
           <Brightness7 className={styles['mobile-icon-button']}/>
           <div className={styles["mobile-login"]}>
             <p>LOGIN</p>

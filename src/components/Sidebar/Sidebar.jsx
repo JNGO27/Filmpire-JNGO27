@@ -1,10 +1,10 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import styles from './styles.module.css';
 import { useGetGenresQuery } from '../../services/TMDB';
 import { CircularProgress } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import genreIcons from '../../assets/genres';
-import { SmallSidebar } from '../';
+import { SmallSidebar, SidebarModal } from '../';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useSelector, useDispatch } from 'react-redux';
 import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
@@ -12,7 +12,7 @@ import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
 const Sidebar = () => {
   const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
   const { data, isFetching } = useGetGenresQuery();
-  const { smallSidebar } = useContext(ToggleSidebarContext);
+  const { smallSidebar, sidebarModal } = useContext(ToggleSidebarContext);
 
   const dispatch = useDispatch();
 
@@ -25,6 +25,7 @@ const Sidebar = () => {
   if(!smallSidebar) {
     return (
       <div className={styles.sidebar}>
+        <SidebarModal />
         <div className={styles.categories}>
         <h5 className={styles["title-categories"]}>Categories</h5>
           <ul>

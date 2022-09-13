@@ -4,10 +4,19 @@ export const ToggleSidebarContext = createContext();
 
 const ToggleSidebar = ({ children }) => {
   const [smallSidebar, setSmallSidebar] = useState(false);
+  const [sidebarModal, setSidebarModal] = useState(false);
+  const [sidebarModalMobile, setSidebarModalMobile] = useState(false);
 
   const handleSidebar = () => {
     setSmallSidebar(!smallSidebar);
-    console.log(smallSidebar)
+  };
+
+  const handleSidebarModal = () => {
+    setSidebarModal(!sidebarModal);
+  };
+
+  const handleSidebarModalMobile = () => {
+    setSidebarModalMobile(!sidebarModalMobile);
   };
 
   return (
@@ -15,6 +24,12 @@ const ToggleSidebar = ({ children }) => {
       smallSidebar,
       setSmallSidebar,
       handleSidebar,
+      sidebarModal,
+      setSidebarModal,
+      handleSidebarModal,
+      sidebarModalMobile,
+      setSidebarModalMobile,
+      handleSidebarModalMobile,
     }}>
       {children}
     </ToggleSidebarContext.Provider>

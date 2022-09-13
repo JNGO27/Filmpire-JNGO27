@@ -17,10 +17,25 @@
 }
 
 .menu {
-  position: relative;
+  display: none;
   color: var(--light-primary);
-
   cursor: pointer;
+}
+
+.modal-menu {
+  display: none !important;
+}
+
+@media(max-width: 1100px) {
+  .menu {
+    display: none !important;
+  }
+
+  .modal-menu {
+    display: revert !important;
+    color: var(--light-primary);
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 680px) {

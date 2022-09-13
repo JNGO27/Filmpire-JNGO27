@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import genreIcons from '../../assets/genres';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useSelector, useDispatch } from 'react-redux';
+import { SidebarModal } from '../';
 
 const SmallSidebar = () => {
   const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
@@ -20,6 +21,7 @@ const SmallSidebar = () => {
 
   return (
     <div className={styles.sidebar}>
+      <SidebarModal />
       <div className={styles.categories}>
       <h5 className={styles["title-categories"]}>Categories</h5>
         <ul>
