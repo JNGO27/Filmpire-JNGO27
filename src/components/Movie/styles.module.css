@@ -1,0 +1,48 @@
+.movie-wrapper {
+  --movie-width: clamp(150px, 200px, 215px);
+  justify-self: center;
+
+  width: min(210px, 100%);
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: var(--movie-width);
+  max-width: 100%;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+}
+
+.movie {
+  height: 300px;
+  border-radius: 20px;
+  width: var(--movie-width);
+  max-width: 100%;
+}
+
+.movie-wrapper h5 {
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.rating-wrapper {
+  align-self: center;
+}
+
+@media((hover:hover) and (pointer:fine)) {
+  .movie:hover {
+    transform: scale(1.05);
+  }
+}

@@ -1,0 +1,163 @@
+.sidebar {
+  grid-area: sidebar;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  border-right: 1px solid hsl(0deg 0% 80% / 0.5);
+  padding-bottom: 30px;
+}
+
+ul {
+  width: 100%;
+}
+
+.categories {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-bottom: 1px solid hsl(0deg 0% 80% / 0.5);
+}
+
+.category {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  padding: 10px 0;
+  height: 100%;
+}
+
+.category-icon {
+  margin-left: 32px;
+  margin-right: 32px;
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.genres {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.genre {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  padding: 10px 0;
+}
+
+.genre-icon {
+  margin-left: 32px;
+  margin-right: 32px;
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.title-categories {
+  display: flex;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+
+  margin: 30px 0px 10px 32px;
+  color: hsl(0deg 0% 0% / 0.6);
+}
+
+.title-genres {
+  display: flex;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+
+  margin: 20px 0px 10px 32px;
+  color: hsl(0deg 0% 0% / 0.6);
+}
+
+@media((hover:hover) and (pointer:fine)) {
+  .category:hover {
+    background-color: hsl(0deg 0% 0% / 0.04);
+    outline: 4px solid hsl(0deg 0% 0% / 0.04);
+  }
+
+  .genre:hover {
+    background-color: hsl(0deg 0% 0% / 0.04);
+    outline: 4px solid hsl(0deg 0% 0% / 0.04);
+  }
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 102px;
+  }
+
+  .title-categories {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .category {
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    font-size: 0.7rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .category li {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .title-genres {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .genre {
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    font-size: 0.7rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .genre li {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.progress-circle {
+  width: 300px;
+  height: 300px;
+  color: var(--light-primary);
+}
+
+@media (max-width: 680px) {
+  .sidebar {
+   display: none;
+  }
+}

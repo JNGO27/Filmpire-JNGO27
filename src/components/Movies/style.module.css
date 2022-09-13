@@ -1,0 +1,11 @@
+.movies {
+  width: 100%;
+  height: 100%;
+}
+
+.progress-circle {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--light-primary);
+}

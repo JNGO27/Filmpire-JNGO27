@@ -1,0 +1,141 @@
+.header {
+  grid-area: header;
+
+  color: var(--light-secondary);
+  background-color: var(--light-primary);
+  width: calc(100% + 8px);
+  margin-left: -8px;
+
+  box-shadow: 12px 0px 10px 5px hsl(0deg 0% 0% / 0.6);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  
+  height: 100%;
+  padding: 0 40px;
+}
+
+.menu {
+  display: none;
+}
+
+svg {
+  max-width: 24px;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: baseline;
+}
+
+.icon-button {
+  position: relative;
+  cursor: pointer;
+}
+
+.login {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  
+  font-family: roboto, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.85rem;
+  letter-spacing: 0.08rem;
+}
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+
+  cursor: pointer;
+}
+
+.mobile-wrapper {
+  display: none;
+}
+
+@media((hover:hover) and (pointer:fine)) {
+  .icon-button:hover {
+    background-color: hsl(0deg 0% 0% / 0.1);
+    outline: 4px solid hsl(0deg 0% 0% / 0.1);
+    border-radius: 50%;
+  }
+
+  .login-wrapper:hover {
+    background-color: hsl(0deg 0% 0% / 0.1);
+    outline: 4px solid hsl(0deg 0% 0% / 0.1);
+  }
+}
+
+@media(max-width: 680px) {
+  .wrapper {
+    display: none;
+  }
+  
+  .mobile-wrapper {
+    display: revert;
+  }
+
+  .mobile-top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .mobile-menu {
+    cursor: pointer;
+  }
+
+  .mobile-icon-button{
+    cursor: pointer;
+  }
+
+  .mobile-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-family: roboto, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.85rem;
+    letter-spacing: 0.08rem;
+
+    cursor: pointer;
+  }
+}
+
+@media(max-width: 550px) {
+  .wrapper {
+    padding: 10px;
+  }
+
+  svg {
+    max-width: 20px;
+  }
+
+  .mobile-login {
+    font-size: 0.65rem;
+    letter-spacing: 0.06rem;
+  }
+
+  @media((hover:hover) and (pointer:fine)) {
+    .mobile-icon-button:hover {
+      background-color: hsl(0deg 0% 0% / 0.1);
+      outline: 4px solid hsl(0deg 0% 0% / 0.1);
+      border-radius: 50%;
+    }
+  
+    .mobile-login:hover {
+      background-color: hsl(0deg 0% 0% / 0.1);
+      outline: 4px solid hsl(0deg 0% 0% / 0.1);
+    }
+  }
+}

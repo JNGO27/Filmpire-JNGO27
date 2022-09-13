@@ -1,0 +1,52 @@
+.featured-container {
+  padding: 30px;
+}
+
+.overlay {
+  position: relative;
+
+  height: 590px;
+  width: 100%;
+  background-color: black;
+  transition: transform 250ms;
+}
+
+.featured-movie img {
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.text-container {
+  position: absolute ;
+  bottom: 10%;
+  left: 20px;
+  max-width: 40%;
+}
+
+.title {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  color: var(--light-secondary);
+  margin-bottom: 10px;
+}
+
+.overview {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  color: var(--light-secondary);
+  text-overflow: ellipsis;
+}
+
+@media((hover:hover) and (pointer:fine)) {
+  .overlay:hover {
+    transform: translateY(-8px);
+
+  }
+}

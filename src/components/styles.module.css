@@ -1,0 +1,55 @@
+@import url("https://use.typekit.net/zpy1xex.css");
+
+:root {
+
+  
+  --light-primary: hsl(210, 79%, 46%);
+  --light-secondary: hsl(0, 0%, 100%);
+  --light-search: hsl(0deg 0% 100% / 0.502);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    'logo header'
+    'sidebar main-content'
+  ;
+  
+  height: 100%;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 77.5%); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 55%); 
+}
+
+@media (max-width: 680px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'header'
+    'main-content'
+  ;
+  }
+}
