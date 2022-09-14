@@ -9,6 +9,7 @@
   width: 100%;
   background-color: black;
   transition: transform 250ms;
+  overflow: hidden;
 }
 
 .featured-movie img {
@@ -20,8 +21,8 @@
 }
 
 .text-container {
-  position: absolute ;
-  bottom: 10%;
+  position: absolute;
+  top: 50%;
   left: 20px;
   max-width: 40%;
 }
@@ -33,6 +34,7 @@
   line-height: 1.334;
   color: var(--light-secondary);
   margin-bottom: 10px;
+  text-overflow: ellipsis;
 }
 
 .overview {
@@ -47,6 +49,5 @@
 @media((hover:hover) and (pointer:fine)) {
   .overlay:hover {
     transform: translateY(-8px);
-
   }
 }

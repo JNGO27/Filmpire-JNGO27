@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styles from './styles.module.css';
 
-import { Brightness4, Brightness7, AccountCircle, Menu } from '@material-ui/icons';
+import { Brightness4, Brightness7, AccountCircle, Menu, SearchRounded } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { Search, Sidebar, SidebarModalMobile } from '../'
 import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
