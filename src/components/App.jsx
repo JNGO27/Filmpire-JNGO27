@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo, Sidebar, NavBar, Content } from './';
+import { Logo, Sidebar, NavBar, Content, Pagination } from './';
 import styles from './styles.module.css';
 import store from '../app/store';
 import { Provider } from 'react-redux';

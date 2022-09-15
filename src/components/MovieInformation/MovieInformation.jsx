@@ -1,20 +1,43 @@
-import React from 'react';
-import { Box, CircularProgress, Modal, Rating, ButtonGroup, Button, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core';
+import { Box, CircularProgress, Modal, Rating, ButtonGroup, Button, Typography, useMediaQuery } from '@mui/material';
 import { Movie as MovieIcon, Theaters, Language, PlusOne, Favorite, FavoriteBorderOutlined, Remove, ArrowBack } from '@mui/icons-material';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import styles from './styles.module.css';
-
-import { useGetMovieQuery } from '../../services/TMDB';
+import { MovieList } from '../';
+import { useGetMovieQuery, useGetRecommendationsQuery } from '../../services/TMDB';
 import genreIcons from '../../assets/genres';
 
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 
+const stylesMUI = makeStyles({
+  modal: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+  },
+  video: {
+    width: '80%',
+    height: '80%',
+  }
+})
+
 const MovieInformation = () => {
-const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
+
+  const classes = stylesMUI();
+
+  const threeColumns = useMediaQuery(('(max-width: 1500px)'));
+  const numOfMovies = threeColumns ? 7 : 9;
+
+  const dispatch = useDispatch();
   const { id } = useParams();
   const { data, isFetching, error } = useGetMovieQuery(id);
+  const { data: recommendations, isFetching: isRecommendationsFetching } = useGetRecommendationsQuery({ list: `/recommendations`, movie_id: id });
 
   if(isFetching) {
     <Box display="flex" justifyContent="center" alignItems="center">
@@ -29,6 +52,7 @@ const dispatch = useDispatch();
   }
 
   return (
+  <>
     <div className={styles["movie-information-container"]}>
       <img className={styles.poster} src={`https://image.tmdb.org/t/p/w500/${data?.poster_path}`} alt={data?.title} />
       <div className={styles["movie-info"]}>
@@ -70,23 +94,43 @@ const dispatch = useDispatch();
               }).slice(0, 6)}
             </div>
             <div className={styles["buttons-container"]}>
-              <ButtonGroup size="small" variant="outlined">
+              <ButtonGroup size="small" variant="outlined" className={styles['button-group']}>
                 <Button target="_blank" rel="noopener noreferrer" href={data?.homepage} endIcon={<Language />}>Website</Button>
                 <Button target="_blank" rel="noopener noreferrer" href={`https://www.imdb.com/title/${data?.imdb_id}`} endIcon={<MovieIcon />}>IMDB</Button>
-                <Button onClick={() => {}} href="#" endIcon={<Theaters />}>Trailer</Button>
-              </ButtonGroup>
-              <ButtonGroup size="small" variant="outlined">
-                <Button endIcon={<ArrowBack />} sx={{ borderColor: 'primary.main', textUnderline: 'none'}}>
-                  <Typography component={Link} to="/" color="inherit" variant="subtitle2" sx={{ textDecoration: 'none'}}>
-                    Back
-                  </Typography>
-                </Button>
+                <Button onClick={() => setOpen(true)} href="#" endIcon={<Theaters />}>Trailer</Button>
               </ButtonGroup>
             </div>
           </div>
         </div>
       </div>
+    <div className={styles["movie-recommendations"]}>
+       <h3 className={styles["recommendation-title"]}>You might also like</h3>
+       {recommendations
+       ? <MovieList movies={recommendations} numberOfMovies={numOfMovies}/>
+       : <div> Sorry Not Found</div>
+       }
     </div>
+    <Modal
+      closeAfterTransition
+      className={classes.modal}
+      open={open}
+      onClose={() => setOpen(false)}
+    >
+    <>
+      {data?.videos?.results?.length > 0 && (
+        <iframe
+          autoPlay
+          className={classes.video}
+          frameBorder="0"
+          title="Trailer"
+          src={`https://www.youtube.com/embed/${data.videos.results[0].key}`}
+          allow="autoplay"
+        />
+      )}
+    </>
+    </Modal>
+    </div>
+  </>
   )
 }
 

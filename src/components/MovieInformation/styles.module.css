@@ -150,11 +150,13 @@
 .actor-info {
   display: grid;
   grid-template-columns: repeat(3, 112px);
+  justify-content: center;
   place-content: center;
   gap: 40px;
 }
 
 .actor-links {
+  place-content: center;
   text-decoration: none;
 }
 
@@ -191,8 +193,33 @@
 .buttons-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 40px;
-  gap: 50px;
+  gap: 30px 50px;
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-recommendations {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.recommendation-title {
+  width: fit-content;
+  height: fit-content;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.167;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 
 @media((hover:hover) and (pointer:fine)) {
@@ -205,6 +232,14 @@
   .actor-info {
     display: grid;
     grid-template-columns: repeat(2, 112px);
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .reccomendation-title {
+    font-size: 2.5rem;
   }
 }
 

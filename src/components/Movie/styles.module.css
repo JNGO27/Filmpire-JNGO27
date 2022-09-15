@@ -18,9 +18,9 @@
 }
 
 .movie {
-  height: 300px;
-  border-radius: 20px;
+  height: min(300px, 100%);
   width: var(--movie-width);
+  border-radius: 20px;
   max-width: 100%;
 }
 
