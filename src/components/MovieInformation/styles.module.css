@@ -1,0 +1,216 @@
+.movie-information-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  padding: 30px 60px;
+  gap: 120px;
+}
+
+.poster {
+  max-height: 590px;
+  width: 100%;
+  flex: 0 1 0%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0.5em 1em 1em rgb(64, 64, 70);
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movie-info {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.movie-details {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.text-container {
+
+}
+
+.title {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.167;
+  letter-spacing: 0em;
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0em;
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+
+.movie-details-numbers {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.rating {
+  display: flex;
+  gap: 10px;
+}
+
+.vote-average {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: 0.00938em;
+}
+
+.runtime {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+
+.genres-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-bottom: 20px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: 90px;
+  padding: 10px;
+}
+
+.links img {
+  max-height: 30px;
+  max-width: 30px;
+}
+
+.genre-name {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  line-height: 1.334;
+  letter-spacing: 0em;
+  text-align: center;
+  color: black;
+}
+
+.overview-title {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  margin-bottom: 10px;
+}
+
+.overview-info {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.actors {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.top-cast {
+  align-self: center;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  margin-bottom: 30px;
+}
+
+.actor-info {
+  display: grid;
+  grid-template-columns: repeat(3, 112px);
+  place-content: center;
+  gap: 40px;
+}
+
+.actor-links {
+  text-decoration: none;
+}
+
+.actor-info img {
+  width: 112px;
+  height: 128px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.actor-info h5 {
+  text-decoration: none;
+}
+
+.name {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  text-decoration: none;
+  color: black;
+}
+
+.character {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 50px;
+}
+
+@media((hover:hover) and (pointer:fine)) {
+  .links:hover {
+    text-decoration: underline;
+  }
+}
+
+@media(max-width: 680px) {
+  .actor-info {
+    display: grid;
+    grid-template-columns: repeat(2, 112px);
+  }
+}
+
+@media(max-width: 380px) {
+  .actor-info {
+    display: grid;
+    grid-template-columns: 112px;
+  }
+}

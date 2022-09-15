@@ -10,14 +10,12 @@ const Content = () => {
 
   return (
     <main className={!smallSidebar ? styles.content : styles["wider-content"]}>
-      <div className={styles.toolbar}>
         <Routes>
-        <Route exact path="/movies/:id" element={<MovieInformation />} />
+        <Route exact path="/movie/:id" element={<MovieInformation />} />
             <Route exact path="/actors/:id" element={<Actors />} />
             <Route exact path="/" element={<Movies />}></Route>
             <Route exact path="/profile/:id" element={<Profile />} />
         </Routes>
-    </div>
   </main>
   )
 }

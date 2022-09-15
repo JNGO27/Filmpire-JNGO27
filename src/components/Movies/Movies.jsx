@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CircularProgress } from '@material-ui/core';
+import { Box, CircularProgress } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { useGetMoviesQuery } from '../../services/TMDB';
 import { MovieList } from '../';
@@ -15,16 +15,17 @@ const Movies = () => {
 
   if(isFetching) {
     return (
-      <div>
-        <CircularProgress size="4rem" className={styles["progress-circle"]}/>
-      </div>
+      <Box display="flex" justifyContent="center">
+        <CircularProgress size="4rem" />
+      </Box>
     )
   }
 
   if(!data.results.length) {
     return (
-      <div>
+      <div className={styles["no-match"]}>
         <h4>No Movies match that name.</h4>
+        <h4>Please search for something else. 🎥</h4>
       </div>
     )
   }

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styles from './styles.module.css';
 import { useGetGenresQuery } from '../../services/TMDB';
-import { CircularProgress } from '@material-ui/core';
+import { Box, CircularProgress } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import genreIcons from '../../assets/genres';
 import { SmallSidebar, SidebarModal } from '../';
@@ -40,7 +40,9 @@ const Sidebar = () => {
         <div className={styles.genres} >
         <h5 className={styles["title-genres"]}>Genres</h5>
           {isFetching ? (
-            <CircularProgress className={styles["progress-circle"]}/>
+          <Box display="flex" justifyContent="center">
+            <CircularProgress size="4rem" />
+          </Box>
           ) :
             <ul>
               {data.genres.map(({ name, id }) => (

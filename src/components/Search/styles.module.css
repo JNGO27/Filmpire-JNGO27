@@ -37,7 +37,7 @@
 
 input:focus {
   border: none;
-  border-bottom: 1px solid var(--light-search);
+  border-bottom: 1px solid orange;
   outline: none;
 }
 

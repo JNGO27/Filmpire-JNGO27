@@ -63,8 +63,9 @@ const SidebarModal = () => {
           <div className={styles.genres} >
           <h5 className={styles["title-genres"]}>Genres</h5>
             {isFetching ? (
-              <CircularProgress className={styles["progress-circle"]}/>
-            ) :
+            <Box display="flex" justifyContent="center">
+              <CircularProgress size="4rem" />
+            </Box>            ) :
               <ul>
                 {data.genres.map(({ name, id }) => (
                   <Link 
