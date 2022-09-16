@@ -8,15 +8,15 @@ const ToggleSidebar = ({ children }) => {
   const [sidebarModalMobile, setSidebarModalMobile] = useState(false);
 
   const handleSidebar = () => {
-    setSmallSidebar(!smallSidebar);
+    setSmallSidebar((prevValue) => !prevValue);
   };
 
   const handleSidebarModal = () => {
-    setSidebarModal(!sidebarModal);
+    setSidebarModal((prevValue) => !prevValue);
   };
 
   const handleSidebarModalMobile = () => {
-    setSidebarModalMobile(!sidebarModalMobile);
+    setSidebarModalMobile((prevValue) => !prevValue);
   };
 
   return (

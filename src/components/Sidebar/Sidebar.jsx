@@ -1,15 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import styles from './styles.module.css';
 import { useGetGenresQuery } from '../../services/TMDB';
 import { Box, CircularProgress } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import genreIcons from '../../assets/genres';
-import { SmallSidebar, SidebarModal } from '../';
+import { SmallSidebar, SidebarModal, SidebarSpinner } from '../';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useSelector, useDispatch } from 'react-redux';
 import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
 
 const Sidebar = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
   const { data, isFetching } = useGetGenresQuery();
   const { smallSidebar, sidebarModal } = useContext(ToggleSidebarContext);
@@ -25,7 +29,6 @@ const Sidebar = () => {
   if(!smallSidebar) {
     return (
       <div className={styles.sidebar}>
-        <SidebarModal />
         <div className={styles.categories}>
         <h5 className={styles["title-categories"]}>Categories</h5>
           <ul>
@@ -40,9 +43,7 @@ const Sidebar = () => {
         <div className={styles.genres} >
         <h5 className={styles["title-genres"]}>Genres</h5>
           {isFetching ? (
-          <Box display="flex" justifyContent="center">
-            <CircularProgress size="4rem" />
-          </Box>
+            <SidebarSpinner />
           ) :
             <ul>
               {data.genres.map(({ name, id }) => (
@@ -54,6 +55,7 @@ const Sidebar = () => {
             </ul>
           }
         </div>
+        <SidebarModal />
       </div>
     )
   } else {

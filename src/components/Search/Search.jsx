@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { SearchRounded } from '@material-ui/icons';
 import styles from './styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
 
 import { searchMovie } from '../../features/currentGenreOrCategory';
 
@@ -12,7 +11,6 @@ const Search = () => {
 
   const handleKeyPress = (e) => {
     if(e.key === 'Enter') {
-      console.log(e.key, query)
       dispatch(searchMovie(query))
     }
   };

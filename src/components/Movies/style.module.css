@@ -8,4 +8,6 @@
   line-height: 2.334;
   margin-top: 60px;
   margin-left: 40px;
+
+  color: var(--dark-secondary);
 }

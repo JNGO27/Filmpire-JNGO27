@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import genreIcons from '../../assets/genres';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useSelector, useDispatch } from 'react-redux';
+import { SidebarSpinner } from '../';
 import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
 import { Modal, Box, useMediaQuery, autocompleteClasses } from '@mui/material';
 import styles from './styles.module.css';
@@ -15,7 +16,8 @@ const style = {
   position: 'absolute',
   top: '0',
   left: '0',
-  backgroundColor: 'white',
+  backgroundColor: 'rgb(18, 18, 18)',
+  color: 'rgb(255, 255, 255)',
   overflowY: "scroll",
 };
 
@@ -43,7 +45,7 @@ const SidebarModalMobile = () => {
       <Box sx={style}>
           <Link to="/" onClick={() => handleSidebarModalMobile()}>
           <div className={styles["logo-wrapper"]}>
-              <img src={blueLogo} alt="Filmpire Logo" className={styles.logo}/>
+              <img src={redLogo} alt="Filmpire Logo" className={styles.logo}/>
           </div>
           </Link>
         <div className={styles.categories}>
@@ -63,9 +65,8 @@ const SidebarModalMobile = () => {
           <div className={styles.genres} >
           <h5 className={styles["title-genres"]}>Genres</h5>
             {isFetching ? (
-            <Box display="flex" justifyContent="center">
-              <CircularProgress size="4rem" />
-            </Box>            ) :
+              <SidebarSpinner />
+            ) :
               <ul>
                 {data.genres.map(({ name, id }) => (
                   <Link 

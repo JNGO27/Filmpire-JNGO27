@@ -4,21 +4,22 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: white;
-  border-bottom: 1px solid hsl(0deg 0% 80% / 0.5);
   
-  box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.6);
+  box-shadow: 0px 0px 8px 8px rgb(64, 64, 70);
+  ;
+  background-color: var(--dark-primary);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09));
+  z-index: 1;
 }
 
 .logo {
-  right: 4px;
   width: 150px;
   cursor: pointer;
 }
 
 .menu {
   display: none;
-  color: var(--light-primary);
+  color: #E50914;
   cursor: pointer;
 }
 
@@ -27,13 +28,17 @@
 }
 
 @media(max-width: 1100px) {
+  .logo {
+    margin-right: 4px;
+  }
+
   .menu {
     display: none !important;
   }
 
   .modal-menu {
     display: revert !important;
-    color: var(--light-primary);
+    color: #E50914;
     cursor: pointer;
   }
 }

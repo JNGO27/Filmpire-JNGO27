@@ -5,6 +5,7 @@
   width: 100%;
   padding: 30px 60px;
   gap: 120px;
+  overflow-y: scroll;
 }
 
 .poster {
@@ -31,7 +32,6 @@
 }
 
 .text-container {
-
 }
 
 .title {
@@ -43,6 +43,8 @@
   text-align: center;
 
   margin-bottom: 20px;
+
+  color: var(--dark-secondary);
 }
 
 .tagline {
@@ -54,6 +56,8 @@
   text-align: center;
 
   margin-bottom: 20px;
+
+  color: var(--dark-secondary);
 }
 
 .movie-details-numbers {
@@ -62,6 +66,8 @@
   flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 30px;
+
+  color: var(--dark-secondary);
 }
 
 .rating {
@@ -95,16 +101,22 @@
 
 .links {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  width: 90px;
+  width: max-content;
   padding: 10px;
+
+  border: 2px solid rgb(64, 64, 70);
+  border-radius: 10px;
+  color: var(--dark-secondary);
 }
 
 .links img {
   max-height: 30px;
   max-width: 30px;
+  filter: invert(1) !important;
 }
 
 .genre-name {
@@ -113,7 +125,7 @@
   line-height: 1.334;
   letter-spacing: 0em;
   text-align: center;
-  color: black;
+  color: var(--dark-secondary);
 }
 
 .overview-title {
@@ -122,6 +134,8 @@
   font-size: 1.5rem;
   line-height: 1.334;
   margin-bottom: 10px;
+
+  color: var(--dark-secondary);
 }
 
 .overview-info {
@@ -130,12 +144,16 @@
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 30px;
+
+  color: var(--dark-secondary);
 }
 
 .actors {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  color: var(--dark-secondary);
 }
 
 .top-cast {
@@ -145,6 +163,8 @@
   font-size: 1.5rem;
   line-height: 1.334;
   margin-bottom: 30px;
+
+  color: var(--dark-secondary);
 }
 
 .actor-info {
@@ -153,11 +173,14 @@
   justify-content: center;
   place-content: center;
   gap: 40px;
+
+  color: var(--dark-secondary);
 }
 
 .actor-links {
   place-content: center;
   text-decoration: none;
+  transition: transform 250ms;
 }
 
 .actor-info img {
@@ -179,6 +202,7 @@
   letter-spacing: 0.00938em;
   text-decoration: none;
   color: black;
+  color: var(--dark-secondary);
 }
 
 .character {
@@ -187,7 +211,7 @@
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.00938em;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .buttons-container {
@@ -197,11 +221,26 @@
   margin-top: 40px;
   gap: 30px 50px;
   width: 100%;
+  border: none;
 }
 
 .button-group {
   display: flex;
   flex-wrap: wrap;
+  color: rgb(144, 202, 249);
+  gap: 4px;
+}
+
+.button-group button {
+  border: 1px solid rgba(144, 202, 249, 0.5) !important;
+  border-radius: 4px !important;
+  color: rgb(144, 202, 249);
+}
+
+.button-group a {
+  border: 1px solid rgba(144, 202, 249, 0.5) !important;
+  border-radius: 4px !important;
+  color: rgb(144, 202, 249);
 }
 
 .movie-recommendations {
@@ -220,11 +259,34 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+
+  color: var(--dark-secondary);
 }
 
 @media((hover:hover) and (pointer:fine)) {
   .links:hover {
+    background-color: rgb(64, 64, 70, 0.25);
     text-decoration: underline;
+  }
+
+  .button-group a:hover {
+    background-color: rgb(144, 202, 249, 0.1);
+  }
+  
+  .button-group button:hover {
+    background-color: rgb(144, 202, 249, 0.1);
+  }
+}
+
+@media((hover:hover) and (pointer:fine)) {
+  .actor-links:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media(max-width: 1100px) {
+  .recommendation-title {
+    font-size: 2.5rem;
   }
 }
 

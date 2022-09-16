@@ -11,7 +11,7 @@
   left: -24px;
   bottom: 4px;
   z-index: 1;
-  color: var(--light-search);
+  color: var(--dark-secondary);
 }
 
 .search input {
@@ -29,15 +29,16 @@
   padding-bottom: 4px;
   width: 100%; 
 
-  color: var(--light-secondary);
-  background-color: var(--light-primary);
+  color: var(--dark-secondary);
+  background-color: var(--dark-primary);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09));
   border: none;
   border-bottom: 1px solid var(--light-search);
 }
 
 input:focus {
   border: none;
-  border-bottom: 1px solid orange;
+  border-bottom: 2px solid rgb(144, 202, 249);
   outline: none;
 }
 

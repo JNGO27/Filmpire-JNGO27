@@ -6,6 +6,9 @@
   --light-primary: hsl(210, 79%, 46%);
   --light-secondary: hsl(0, 0%, 100%);
   --light-search: hsl(0deg 0% 100% / 0.502);
+
+  --dark-primary: rgb(18, 18, 18);
+  --dark-secondary: rgb(255, 255, 255);
 }
 
 * {
@@ -32,7 +35,7 @@ html, body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {

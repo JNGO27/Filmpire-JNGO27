@@ -1,0 +1,17 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.spinner {
+  margin-top: 60px;
+  width: 60px !important;
+  height: 60px !important;
+}
+.spinner svg {
+  width: 60px !important;
+  height: 60px !important;
+  max-width: max-content;
+  color: rgb(144, 202, 249) !important;
+}

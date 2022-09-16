@@ -10,16 +10,17 @@
 
 .logo-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background-color: white;
   height: 80px;
   border-bottom: 1px solid hsl(0deg 0% 80% / 0.5);
-  
+
+  background-color: var(--dark-primary);
 }
 
 .logo {
-  width: min(180px, 100%);
+  width: 180px;
   cursor: pointer;
 }
 
@@ -42,6 +43,8 @@ ul {
   color: black;
   padding: 10px 0;
   height: 100%;
+
+  color: var(--dark-secondary);
 }
 
 .category-icon {
@@ -49,6 +52,8 @@ ul {
   margin-right: 32px;
   max-width: 30px;
   max-height: 30px;
+
+  filter: invert(1) !important;
 }
 
 .genres {
@@ -57,6 +62,8 @@ ul {
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 8px;
+
+  color: var(--dark-secondary);
 }
 
 .genre {
@@ -65,6 +72,8 @@ ul {
   text-decoration: none;
   color: black;
   padding: 10px 0;
+
+  color: var(--dark-secondary);
 }
 
 .genre-icon {
@@ -72,6 +81,8 @@ ul {
   margin-right: 32px;
   max-width: 30px;
   max-height: 30px;
+
+  filter: invert(1) !important;
 }
 
 .title-categories {
@@ -81,7 +92,7 @@ ul {
   font-size: 0.875rem;
 
   margin: 30px 0px 10px 32px;
-  color: hsl(0deg 0% 0% / 0.6);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .title-genres {
@@ -91,17 +102,17 @@ ul {
   font-size: 0.875rem;
 
   margin: 20px 0px 10px 32px;
-  color: hsl(0deg 0% 0% / 0.6);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @media((hover:hover) and (pointer:fine)) {
   .category:hover {
-    background-color: hsl(0deg 0% 0% / 0.04);
-    outline: 4px solid hsl(0deg 0% 0% / 0.04);
+    background-color: rgb(64, 64, 70, 0.7);
+    outline: 4px solid rgb(64, 64, 70, 0.7);
   }
 
   .genre:hover {
-    background-color: hsl(0deg 0% 0% / 0.04);
-    outline: 4px solid hsl(0deg 0% 0% / 0.04);
+    background-color: rgb(64, 64, 70,0.7);
+    outline: 4px solid rgb(64, 64, 70,0.7);
   }
 }

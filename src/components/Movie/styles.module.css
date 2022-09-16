@@ -35,6 +35,8 @@
   white-space: nowrap;
   margin-top: 10px;
   text-align: center;
+
+  color: var(--dark-secondary);
 }
 
 .rating-wrapper {

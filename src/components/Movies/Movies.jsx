@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Box, CircularProgress, useMediaQuery } from '@material-ui/core';
+import { Box, useMediaQuery } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { useGetMoviesQuery } from '../../services/TMDB';
-import { MovieList } from '../';
+import { MovieList, Spinner } from '../';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import styles from './style.module.css';
 import FeaturedMovie from '../FeaturedMovie/FeaturedMovie';
@@ -19,9 +19,7 @@ const Movies = () => {
   const { data, error, isFetching } = useGetMoviesQuery({ genreIdOrCategoryName, page, searchQuery });
   if(isFetching) {
     return (
-      <Box display="flex" justifyContent="center">
-        <CircularProgress size="4rem" />
-      </Box>
+      <Spinner />
     )
   }
 
@@ -40,7 +38,7 @@ const Movies = () => {
     <div className={styles.movies}>
       <FeaturedMovie movie={data.results[0]} />
       <MovieList movies={data} numberOfMovies={numOfMovies}/>
-      <Pagination />
+      <Pagination currentPage={page} setPage={setPage} totalPages={data.total_pages} />
     </div>
   )
 }

@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core';
-import { Box, CircularProgress, Modal, Rating, ButtonGroup, Button, Typography, useMediaQuery } from '@mui/material';
-import { Movie as MovieIcon, Theaters, Language, PlusOne, Favorite, FavoriteBorderOutlined, Remove, ArrowBack } from '@mui/icons-material';
-import { Link, useParams } from 'react-router-dom';
+import { Box, Modal, Rating, ButtonGroup, Button, Typography, useMediaQuery } from '@mui/material';
+import { Movie as MovieIcon, Theaters, Language } from '@mui/icons-material';
+import { Link, useParams} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import styles from './styles.module.css';
-import { MovieList } from '../';
+import { MovieList, Spinner } from '../';
 import { useGetMovieQuery, useGetRecommendationsQuery } from '../../services/TMDB';
 import genreIcons from '../../assets/genres';
 
@@ -27,6 +27,9 @@ const stylesMUI = makeStyles({
 })
 
 const MovieInformation = () => {
+  const search = document.getElementsByClassName('styles_search__1XabI');
+
+
   const [open, setOpen] = useState(false);
 
   const classes = stylesMUI();
@@ -35,18 +38,21 @@ const MovieInformation = () => {
   const numOfMovies = threeColumns ? 7 : 9;
 
   const dispatch = useDispatch();
+
   const { id } = useParams();
   const { data, isFetching, error } = useGetMovieQuery(id);
   const { data: recommendations, isFetching: isRecommendationsFetching } = useGetRecommendationsQuery({ list: `/recommendations`, movie_id: id });
 
   if(isFetching) {
-    <Box display="flex" justifyContent="center" alignItems="center">
-      <CircularProgress size="12rem" />
-    </Box>
+    return <Spinner />
+  }
+
+  if(isRecommendationsFetching) {
+    return <Spinner />
   }
 
   if(error) {
-    <Box display="flex" justifyContent="center" alignItems="center">
+    return <Box display="flex" justifyContent="center" alignItems="center">
       <Link to="/">Something has gone wrong. Go back.</Link>
     </Box>
   }

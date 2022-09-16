@@ -7,6 +7,7 @@ import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useSelector, useDispatch } from 'react-redux';
 import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
 import { Modal, Box, useMediaQuery } from '@mui/material';
+import { SidebarSpinner } from '../';
 import styles from './styles.module.css';
 
 const style = {
@@ -15,7 +16,8 @@ const style = {
   position: 'absolute',
   top: '0',
   left: '0',
-  backgroundColor: 'white',
+  backgroundColor: 'rgb(18, 18, 18)',
+  color: 'rgb(255, 255, 255)',
   overflowY: "scroll",
 };
 
@@ -33,7 +35,6 @@ const SidebarModal = () => {
 
   const redLogo = 'https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png';
   const blueLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
-
   return (
     <div>
       {matches && <Modal
@@ -43,7 +44,7 @@ const SidebarModal = () => {
       <Box sx={style}>
         <Link to="/" onClick={() => handleSidebarModal()}>
           <div className={styles["logo-wrapper"]}>
-              <img src={blueLogo} alt="Filmpire Logo" className={styles.logo}/>
+              <img src={redLogo} alt="Filmpire Logo" className={styles.logo}/>
           </div>
         </Link>
         <div className={styles.categories}>
@@ -63,9 +64,8 @@ const SidebarModal = () => {
           <div className={styles.genres} >
           <h5 className={styles["title-genres"]}>Genres</h5>
             {isFetching ? (
-            <Box display="flex" justifyContent="center">
-              <CircularProgress size="4rem" />
-            </Box>            ) :
+              <SidebarSpinner />
+              ) :
               <ul>
                 {data.genres.map(({ name, id }) => (
                   <Link 

@@ -14,3 +14,5 @@ export { default as MovieList } from './MovieList/MovieList';
 export { default as Movie } from './Movie/Movie';
 export { default as FeaturedMovie } from './FeaturedMovie/FeaturedMovie';
 export { default as Pagination } from './Pagination/Pagination';
+export { default as Spinner } from './Spinner/Spinner';
+export { default as SidebarSpinner } from './SidebarSpinner/SidebarSpinner';

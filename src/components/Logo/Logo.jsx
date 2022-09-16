@@ -15,7 +15,7 @@ const Logo = () => {
       <Menu className={styles.menu} onClick={handleSidebar}/>
       <Menu className={styles["modal-menu"]} onClick={handleSidebarModal} />
       <Link to="/">
-        <img src={blueLogo} alt="Filmpire Logo" className={styles.logo}/>
+        <img src={redLogo} alt="Filmpire Logo" className={styles.logo}/>
       </Link>
     </div>
   )

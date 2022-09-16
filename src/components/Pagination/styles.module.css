@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button {
+  margin: 30px 2px;
+  background-color: rgb(144, 202, 249) !important;
+  color: black !important;
+}
+
+.page-number {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 2.125rem;
+  line-height: 1.235;
+  letter-spacing: 0.00735em;
+  
+  margin: 0 20px !important;
+  color: var(--dark-secondary);
+}
+
+@media((hover:hover) and (pointer:fine)) {
+  .button:hover {
+    background-color: hsl(210, 79%, 56%) !important;
+  }
+}

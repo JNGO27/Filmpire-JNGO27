@@ -6,7 +6,11 @@
   width: calc(100% + 8px);
   margin-left: -8px;
 
-  box-shadow: 12px 0px 10px 5px hsl(0deg 0% 0% / 0.6);
+  box-shadow: 12px 0px 10px 8px rgb(64, 64, 70);
+  border-left: 7px solid hsl(0, 0%, 55%);
+  background-color: var(--dark-primary);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09));
+  z-index: 1;
 }
 
 .wrapper {
@@ -29,6 +33,8 @@ svg {
   display: flex;
   flex: 1;
   align-items: baseline;
+
+  visibility: hidden;
 }
 
 .icon-button {
@@ -46,6 +52,7 @@ svg {
   font-style: normal;
   font-size: 0.85rem;
   letter-spacing: 0.08rem;
+  visibility: hidden;
 }
 
 .login-wrapper {
@@ -93,11 +100,13 @@ svg {
   }
 
   .mobile-menu {
+    color: #E50914;
     cursor: pointer;
   }
 
   .mobile-icon-button{
     cursor: pointer;
+    visibility: hidden;
   }
 
   .mobile-login {
@@ -112,6 +121,8 @@ svg {
     letter-spacing: 0.08rem;
 
     cursor: pointer;
+
+    visibility: hidden;
   }
 }
 
@@ -129,7 +140,7 @@ svg {
     letter-spacing: 0.06rem;
   }
 
-  @media((hover:hover) and (pointer:fine)) {
+@media((hover:hover) and (pointer:fine)) {
     .mobile-icon-button:hover {
       background-color: hsl(0deg 0% 0% / 0.1);
       outline: 4px solid hsl(0deg 0% 0% / 0.1);
@@ -140,5 +151,11 @@ svg {
       background-color: hsl(0deg 0% 0% / 0.1);
       outline: 4px solid hsl(0deg 0% 0% / 0.1);
     }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    background-color: black;
   }
 }
