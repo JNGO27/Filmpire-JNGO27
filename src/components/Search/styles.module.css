@@ -50,4 +50,9 @@ input:focus {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .search input {
+    background-color: var(--dark-primary);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09));
+  }
 }
