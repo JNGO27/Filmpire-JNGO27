@@ -1,3 +1,4 @@
+/* eslint-disable */
 import action from './action.png';
 import adventure from './adventure.png';
 import animation from './animation.png';

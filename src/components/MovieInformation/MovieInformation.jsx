@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { Modal, Rating, ButtonGroup, Button, useMediaQuery } from '@mui/material';
 import { Movie as MovieIcon, Theaters, Language } from '@mui/icons-material';
