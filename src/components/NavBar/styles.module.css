@@ -131,10 +131,6 @@ svg {
     padding: 10px;
   }
 
-  svg {
-    max-width: 20px;
-  }
-
   .mobile-login {
     font-size: 0.65rem;
     letter-spacing: 0.06rem;
@@ -151,11 +147,5 @@ svg {
       background-color: hsl(0deg 0% 0% / 0.1);
       outline: 4px solid hsl(0deg 0% 0% / 0.1);
     }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .header {
-    background-color: black;
   }
 }
