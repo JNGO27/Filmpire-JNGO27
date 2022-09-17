@@ -79,7 +79,6 @@ const SidebarModalMobile = () => {
               </ul>
             }
           </div>
-      )
       </Box>
       </Modal>}
     </div>

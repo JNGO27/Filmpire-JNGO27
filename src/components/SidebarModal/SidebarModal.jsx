@@ -78,7 +78,6 @@ const SidebarModal = () => {
               </ul>
             }
           </div>
-      )
       </Box>
       </Modal>}
     </div>
