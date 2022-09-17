@@ -10,12 +10,14 @@
 .search-icon {
   left: -24px;
   bottom: 4px;
+  z-index: 1;
   color: var(--dark-secondary);
 }
 
 .search input {
   position: relative;
   right: 20px;
+  z-index: 0;
 
   text-indent: 30px;
   font-family: roboto, sans-serif;
@@ -47,5 +49,10 @@ input:focus {
     max-width: 50%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .search input {
+    background-color: var(--dark-primary);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09));
   }
 }
