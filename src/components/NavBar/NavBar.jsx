@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styles from './styles.module.css';
 
-import { Brightness4, AccountCircle, Menu } from '@material-ui/icons';
+import { Brightness4, AccountCircle, Menu } from '@mui/icons-material';
 import { useLocation } from 'react-router-dom';
 import { Search, SidebarModalMobile } from '../'
 import { ColorModeContext } from '../../utils/ToggleColorMode';

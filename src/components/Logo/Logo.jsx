@@ -1,7 +1,7 @@
 import React, { useContext} from 'react'
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
-import { Menu } from '@material-ui/icons';
+import { Menu } from '@mui/icons-material';
 import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
 
 const Logo = () => {

@@ -243,6 +243,11 @@
   color: rgb(144, 202, 249);
 }
 
+.video-styles {
+  width: 80%;
+  height: 80%;
+}
+
 .movie-recommendations {
   display: flex;
   flex-direction: column;

@@ -15,7 +15,7 @@ const Sidebar = () => {
 
   // const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
   const { data, isFetching } = useGetGenresQuery();
-  const { smallSidebar, sidebarModal } = useContext(ToggleSidebarContext);
+  const { smallSidebar } = useContext(ToggleSidebarContext);
 
   const dispatch = useDispatch();
 

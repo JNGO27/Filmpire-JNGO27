@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SearchRounded } from '@material-ui/icons';
+import { Search as SearchRounded } from '@mui/icons-material';
 import styles from './styles.module.css';
 import { useDispatch } from 'react-redux';
 

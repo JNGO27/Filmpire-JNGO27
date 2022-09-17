@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './styles.module.css';
 import { useGetGenresQuery } from '../../services/TMDB';
-import { CircularProgress } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import genreIcons from '../../assets/genres';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useDispatch } from 'react-redux';
-import { SidebarModal } from '../';
+import { SidebarModal, SidebarSpinner } from '../';
 
 const SmallSidebar = () => {
   // const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
@@ -36,7 +35,7 @@ const SmallSidebar = () => {
       <div className={styles.genres} >
       <h5 className={styles["title-genres"]}>Genres</h5>
         {isFetching ? (
-          <CircularProgress className={styles["progress-circle"]}/>
+         <SidebarSpinner />
         ) :
           <ul>
             {data.genres.map(({ name, id }) => (

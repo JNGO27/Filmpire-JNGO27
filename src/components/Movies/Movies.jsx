@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useGetMoviesQuery } from '../../services/TMDB';
 import { MovieList, Spinner, Error } from '../';
