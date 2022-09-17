@@ -16,3 +16,4 @@ export { default as FeaturedMovie } from './FeaturedMovie/FeaturedMovie';
 export { default as Pagination } from './Pagination/Pagination';
 export { default as Spinner } from './Spinner/Spinner';
 export { default as SidebarSpinner } from './SidebarSpinner/SidebarSpinner';
+export { default as Error } from './Error/Error';

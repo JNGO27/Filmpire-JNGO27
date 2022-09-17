@@ -1,12 +1,11 @@
 import React, { useEffect, useContext } from 'react';
 import styles from './styles.module.css';
 import { useGetGenresQuery } from '../../services/TMDB';
-import { Box, CircularProgress } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import genreIcons from '../../assets/genres';
 import { SmallSidebar, SidebarModal, SidebarSpinner } from '../';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
 
 const Sidebar = () => {
@@ -14,7 +13,7 @@ const Sidebar = () => {
     window.scrollTo(0, 0);
   }, [])
 
-  const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
+  // const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
   const { data, isFetching } = useGetGenresQuery();
   const { smallSidebar, sidebarModal } = useContext(ToggleSidebarContext);
 

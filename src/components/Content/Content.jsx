@@ -12,7 +12,7 @@ const Content = () => {
     <main className={!smallSidebar ? styles.content : styles["wider-content"]}>
         <Routes>
         <Route exact path="/movie/:id" element={<MovieInformation />} />
-            <Route exact path="/actors/:id" element={<Actors />} />
+            <Route exact path="/actor/:id" element={<Actors />} />
             <Route exact path="/" element={<Movies />} />
             <Route exact path="/profile/:id" element={<Profile />} />
         </Routes>

@@ -1,0 +1,122 @@
+
+.actor-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  padding: 30px 60px;
+  gap: 120px;
+}
+
+.poster {
+  max-height: 590px;
+  flex: 0 1 0%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0.5em 0.5em 1em var(--dark-secondary);
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actor-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-height: 100%;
+}
+
+.name {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.167;
+  letter-spacing: 0em;
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  color: var(--dark-secondary);
+}
+
+.birthday {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0em;
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  color: var(--dark-secondary);
+}
+
+.actor-heading {
+  min-width: 600px;
+}
+
+.actor-info p {
+  width: 100%;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: var(--dark-secondary);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  color: rgb(144, 202, 249);
+}
+
+.button {
+  margin: 10px 2px;
+  background-color: rgb(144, 202, 249) !important;
+  color: black !important;
+}
+
+.movies {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  width: fit-content;
+  height: fit-content;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.167;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  color: var(--dark-secondary);
+}
+
+@media(max-width: 1100px) {
+  .actor-heading {
+    min-width: 400px;
+  }
+}
+
+@media(max-width: 680px) {
+  .poster {
+    width: 100%;
+  }
+
+  .actor-heading {
+    min-width: 100%;
+  }
+}
+
+@media((hover:hover) and (pointer:fine)) {
+  .button:hover {
+    background-color: hsl(210, 79%, 56%) !important;
+  }
+}

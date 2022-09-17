@@ -1,13 +1,12 @@
 import React, { useContext } from 'react';
 import { useGetGenresQuery } from '../../services/TMDB';
-import { CircularProgress } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import genreIcons from '../../assets/genres';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { SidebarSpinner } from '../';
 import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
-import { Modal, Box, useMediaQuery, autocompleteClasses } from '@mui/material';
+import { Modal, Box, useMediaQuery } from '@mui/material';
 import styles from './styles.module.css';
 
 const style = {
@@ -34,7 +33,7 @@ const SidebarModalMobile = () => {
   ];
 
   const redLogo = 'https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png';
-  const blueLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
+  // const blueLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
 
   return (
     <div>

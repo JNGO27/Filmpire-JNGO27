@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core';
-import { Box, Modal, Rating, ButtonGroup, Button, Typography, useMediaQuery } from '@mui/material';
+import { Box, Modal, Rating, ButtonGroup, Button, useMediaQuery } from '@mui/material';
 import { Movie as MovieIcon, Theaters, Language } from '@mui/icons-material';
 import { Link, useParams} from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import styles from './styles.module.css';
-import { MovieList, Spinner } from '../';
+import { MovieList, Spinner, Error } from '../';
 import { useGetMovieQuery, useGetRecommendationsQuery } from '../../services/TMDB';
 import genreIcons from '../../assets/genres';
 
@@ -27,9 +26,6 @@ const stylesMUI = makeStyles({
 })
 
 const MovieInformation = () => {
-  const search = document.getElementsByClassName('styles_search__1XabI');
-
-
   const [open, setOpen] = useState(false);
 
   const classes = stylesMUI();
@@ -52,9 +48,7 @@ const MovieInformation = () => {
   }
 
   if(error) {
-    return <Box display="flex" justifyContent="center" alignItems="center">
-      <Link to="/">Something has gone wrong. Go back.</Link>
-    </Box>
+    return <Error />
   }
 
   return (
@@ -91,7 +85,7 @@ const MovieInformation = () => {
             <div className={styles["actor-info"]}>
               {data && data?.credits?.cast?.map(actor => {
                 if(actor?.profile_path && actor?.name) {
-                  return <Link key={actor?.id} to={`/actors/${actor.id}`} className={styles["actor-links"]}>
+                  return <Link key={actor?.id} to={`/actor/${actor.id}`} className={styles["actor-links"]} >
                     <img src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor?.name} />
                     <h5 className={styles.name}>{actor?.name}</h5>
                     <h5 className={styles.character}>{actor?.character.split('/')[0]}</h5>
@@ -116,25 +110,29 @@ const MovieInformation = () => {
        : <div> Sorry Not Found</div>
        }
     </div>
-    <Modal
-      closeAfterTransition
-      className={classes.modal}
-      open={open}
-      onClose={() => setOpen(false)}
-    >
     <>
       {data?.videos?.results?.length > 0 && (
-        <iframe
-          autoPlay
-          className={classes.video}
-          frameBorder="0"
-          title="Trailer"
-          src={`https://www.youtube.com/embed/${data.videos.results[0].key}`}
-          allow="autoplay"
-        />
+        <Modal
+          closeAfterTransition
+          className={classes.modal}
+          open={open}
+          onClose={() => setOpen(false)}
+        >
+        <>
+          {data?.videos?.results?.length > 0 && (
+            <iframe
+              autoPlay
+              className={classes.video}
+              frameBorder="0"
+              title="Trailer"
+              src={`https://www.youtube.com/embed/${data.videos.results[0].key}`}
+              allow="autoplay"
+            />
+          )}
+        </>
+      </Modal>
       )}
     </>
-    </Modal>
     </div>
   </>
   )

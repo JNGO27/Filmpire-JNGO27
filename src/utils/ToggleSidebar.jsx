@@ -1,4 +1,4 @@
-import React, { useState, useMemo, createContext } from 'react'
+import React, { useState, createContext } from 'react'
 
 export const ToggleSidebarContext = createContext();
 

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { SearchRounded } from '@material-ui/icons';
 import styles from './styles.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { searchMovie } from '../../features/currentGenreOrCategory';
 

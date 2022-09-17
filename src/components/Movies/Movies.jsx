@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Box, useMediaQuery } from '@material-ui/core';
+import React, { useState } from 'react';
+import { useMediaQuery } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { useGetMoviesQuery } from '../../services/TMDB';
-import { MovieList, Spinner } from '../';
-import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
+import { MovieList, Spinner, Error } from '../';
+// import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import styles from './style.module.css';
 import FeaturedMovie from '../FeaturedMovie/FeaturedMovie';
 
@@ -32,7 +32,7 @@ const Movies = () => {
     )
   }
 
-  if (error) return "An error has occured.";
+  if (error) return <Error />;
 
   return (
     <div className={styles.movies}>

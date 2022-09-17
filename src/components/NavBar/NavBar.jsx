@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 import styles from './styles.module.css';
 
-import { Brightness4, Brightness7, AccountCircle, Menu, SearchRounded } from '@material-ui/icons';
-import { Link, useLocation } from 'react-router-dom';
-import { Search, Sidebar, SidebarModalMobile } from '../'
+import { Brightness4, AccountCircle, Menu } from '@material-ui/icons';
+import { useLocation } from 'react-router-dom';
+import { Search, SidebarModalMobile } from '../'
 import { ColorModeContext } from '../../utils/ToggleColorMode';
 import { ToggleSidebarContext } from '../../utils/ToggleSidebar';
 
 const NavBar = () => {
   const colorMode = useContext(ColorModeContext);
-  const { sidebarModalMobile, handleSidebarModalMobile } = useContext(ToggleSidebarContext);
+  const { handleSidebarModalMobile } = useContext(ToggleSidebarContext);
   const { pathname } = useLocation();
   const isMovieRoute = pathname.split('/')[1];
 

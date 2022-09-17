@@ -1,9 +1,4 @@
-.movies {
-  width: 100%;
-  height: 100%;
-}
-
-.no-match {
+.error {
   height: 100%;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
