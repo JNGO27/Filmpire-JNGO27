@@ -1,4 +1,4 @@
-This personal portfolio project was built with Next.js, TypeScript, and CSS Modules. It features a clean and modern design, showcasing my work and accomplishments in web development.
+This Movie Exploration Project project was built with React.js, Redux Toolkit, CSS Modules, and TMDB API. It features a clean and modern design, showcasing a large variety of movies to explore.
 
 Application in Action
 Visit the application live demo.
@@ -61,7 +61,7 @@ This will create a new directory called "Filmpire-JNGO27" in the current locatio
 Contributing
 We welcome contributions to Portfolio! If you have an idea for a new feature, an improvement to an existing feature, or a bug fix, please open an issue to discuss it before submitting a pull request. This helps me to review and understand your changes more efficiently.
 
-To contribute code to Portfolio:
+To contribute code to Filmpire-JNGO27:
 
 Fork the repository
 Create a new branch for your feature or bug fix
